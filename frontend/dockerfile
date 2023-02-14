@@ -1,0 +1,15 @@
+FROM node:lts-alpine
+
+ENV HOST=0.0.0.0
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+COPY . .
+
+RUN npm install && npm run build && npm cache clean --force
+
+EXPOSE 3000
+
+CMD [ "node","./.output/server/index.mjs" ]
