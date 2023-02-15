@@ -40,7 +40,7 @@ services:
 
 volumes:
   maria-db:
-    name: "mongo-db"
+    name: "maria-db"
 
 networks:
   app-network:
